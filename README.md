@@ -33,7 +33,8 @@
 J ai d abord creer un depot github mon image
 1.Créer un fichier de pipeline GitHub Actions
     docker-pipeline.yml qui se trouve dans .github/workflows/
-2.Crée un dépôt sur DockerHub pour stocker ton image.Après la configuration du pipeline CI/CD et l'authentification réussie via GitHub Actions, chaque push sur la branche main entraînera la construction et l'upload de l'image vers ce dépôt DockerHub.
+2.Crée un dépôt sur DockerHub pour stocker mon image.
+Après la configuration du pipeline CI/CD et l'authentification réussie via GitHub Actions, chaque push sur la branche main entraînera la construction et l'upload de l'image vers ce dépôt DockerHub.
 
 ## Récupérer l'image depuis DockerHub
 
