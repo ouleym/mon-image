@@ -7,6 +7,7 @@
 3. L'application sera accessible à l'adresse suivante :
     http://localhost:8000
 
+
 ### Partie B
  j ai d abord creer le fichier requirement.txt
      New-Item -ItemType File -Path .\requirements.txt
@@ -30,11 +31,21 @@
 
 À chaque fois qu'un commit est effectué sur la branche `main`, un pipeline GitHub Actions est déclenché. Il construit l'image Docker et la pousse vers DockerHub.
 
-J ai d abord creer un depot github mon image
+
 1.Créer un fichier de pipeline GitHub Actions
     docker-pipeline.yml qui se trouve dans .github/workflows/
-2.Crée un dépôt sur DockerHub pour stocker mon image.
-Après la configuration du pipeline CI/CD et l'authentification réussie via GitHub Actions, chaque push sur la branche main entraînera la construction et l'upload de l'image vers ce dépôt DockerHub.
+2.J ai d abord creer un depot github mon image
+3.Crée un dépôt sur DockerHub pour stocker mon image.
+
+
+ ### Pousser les changements vers GitHub
+    
+    git add .
+    git commit -m "Add GitHub Actions CI/CD pipeline"
+    git push origin main
+    #Une fois que le pipeline est terminé, SUR DOCKER HUB on doit voir notre image dans le dépôt que nous avons créé.
+
+    Après la configuration du pipeline CI/CD et l'authentification réussie via GitHub Actions, chaque push sur la branche main entraînera la construction et l'upload de l'image vers ce dépôt DockerHub.
 
 ## Récupérer l'image depuis DockerHub
 
@@ -43,14 +54,6 @@ L'image Docker est disponible sur DockerHub. Pour la télécharger, utilisez la 
 ```bash
 docker pull ouley02/mon-image:latest  
 ```
- 
- ### Pousser les changements vers GitHub
- 
-    git add .
-    git commit -m "Add GitHub Actions CI/CD pipeline"
-    git push origin main
-#
-
 
 
 
