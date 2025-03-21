@@ -1,0 +1,28 @@
+name: Docker Build & Push
+
+on:
+  push:
+    branches:
+      - main  # Déclenche le pipeline à chaque push sur la branche principale
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛎️ Checkout du code
+        uses: actions/checkout@v4
+
+      - name: 🔐 Connexion à DockerHub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: 🏗️ Build de l'image Docker
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/mon-image:latest .
+
+      - name: 🏷️ Tag de l'image
+        run: docker tag ${{ secrets.DOCKER_USERNAME }}/mon-image:latest ${{ secrets.DOCKER_USERNAME }}/mon-image:v1.0
+
+      - name: 📤 Push de l'image sur DockerHub
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/mon-image:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/mon-image:v1.0
