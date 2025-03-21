@@ -1,9 +1,9 @@
 ### Partie A
 
-1. Assurez-vous que Docker et Docker Compose sont installés sur votre machine.
+1. Je me suis assure que Docker et Docker Compose sont installés sur ma machine.
 2. Exécutez la commande suivante pour lancer le serveur :
-    #terminal
-   docker-compose up
+  #terminal
+    docker-compose up
 3. L'application sera accessible à l'adresse suivante :
     http://localhost:8000
 
@@ -22,5 +22,35 @@
    docker tag mon-image:latest ouley02/mon-image:v1.0
 4.POUSSEZ l image sur dockerHub
    docker push ouley02/mon-image:v1.0
+
+
+### Partie C
+
+## Pipeline CI/CD
+
+À chaque fois qu'un commit est effectué sur la branche `main`, un pipeline GitHub Actions est déclenché. Il construit l'image Docker et la pousse vers DockerHub.
+
+J ai d abord creer un depot github mon image
+1.Créer un fichier de pipeline GitHub Actions
+    docker-pipeline.yml qui se trouve dans .github/workflows/
+2.Crée un dépôt sur DockerHub pour stocker ton image.Après la configuration du pipeline CI/CD et l'authentification réussie via GitHub Actions, chaque push sur la branche main entraînera la construction et l'upload de l'image vers ce dépôt DockerHub.
+
+## Récupérer l'image depuis DockerHub
+
+L'image Docker est disponible sur DockerHub. Pour la télécharger, utilisez la commande suivante :
+
+```bash
+docker pull ouley02/mon-image:latest  
+```
+ 
+ ### TEST 
+ 
+
+
+
+
+
+
+
 
 
