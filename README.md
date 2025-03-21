@@ -44,8 +44,11 @@ L'image Docker est disponible sur DockerHub. Pour la télécharger, utilisez la 
 docker pull ouley02/mon-image:latest  
 ```
  
- ### TEST 
+ ### Pousser les changements vers GitHub
  
+    git add .
+    git commit -m "Add GitHub Actions CI/CD pipeline"
+    git push origin main
 
 
 
